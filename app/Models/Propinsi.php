@@ -1,0 +1,20 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Propinsi extends Model
+{
+    use HasFactory;
+
+    protected $table = 'propinsi';
+    protected $fillable = ['nama_propinsi'];
+
+    // Relasi ke Kota (one to many)
+    public function kota()
+    {
+        return $this->hasMany(Kota::class);
+    }
+}
